@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forside</title>
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="genral.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Martel&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="hamburger-menu">
+        <input id="menu_toggle" type="checkbox" />
+        <!--input= indsamler bruger input. Type="checkbox"= checkbox er et interaktivt element, ændre tilstand, når man afkrydser-->
+        <label class="menu_knap" for="menu_toggle">
+          <!--for="menu_toggle": Dette attribut i <label> fortæller, at dette label er knyttet til inputfeltet med id "menu_toggle". Når brugeren klikker på labelen, aktiveres eller deaktiveres checkboxen automatisk. Dette forbedrer brugervenligheden og gør det lettere at klikke på hele "hamburger-ikonet" for at ændre checkboxens tilstand.-->
+          <span></span>
+        </label>
+
+        <div class="logo_div">
+          <a class="logo" href="index.html">
+            <img src="img/logo/logo_farve.svg" alt="Logo" />
+          </a>
+        </div>
+
+        <ul class="ul_menu">
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="kategori.html">Kategori</a></li>
+          <li class="aktiv"><a href="produkt.html">Produkt</a></li>
+          <li><a href="produktliste.html">Produktliste</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Produkt</h1>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <ul class="ul_footer">
+          <li><a href="index.html">Forside</a></li>
+          <li><a href="kategori.html">Kategori</a></li>
+          <li><a href="produkt.html">Produkt</a></li>
+          <li><a href="produktliste.html">Produktliste</a></li>
+        </ul>
+        <div class="logo_simpel_div">
+          <a class="logo_simpel" href="index.html">
+            <img src="img/logo/simpel_logo_farve.svg" alt="Simpel logo" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+body {
+  background-color: #fcfbf9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 800px) {
+  main {
+    margin: 0 auto 0 auto;
+    max-width: 1200px;
+  }
+}
+
+/******************** menu ********************/
+
+/**** Burgermenu ****/
+@media (max-width: 800px) {
+  header {
+    padding-bottom: 25px;
+  }
+
+  /**** Skjuler checkbox ****/
+  #menu_toggle {
+    opacity: 0;
+  }
+
+  /**** Når man klikker på burgermenu laver den kryds ****/
+  #menu_toggle:checked + .menu_knap > span {
+    transform: rotate(45deg);
+  }
+  /*Samlet set betyder > span i dette kontekst, at CSS-reglen vil blive anvendt på <span>-elementet, der er et direkte barn af .menu_knap (label-elementet), når checkboxen med id "menu_toggle" er afkrydset (checked).*/
+
+  #menu_toggle:checked + .menu_knap > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  /*Samlet set betyder #menu_toggle:checked + .menu_knap > span::before, at CSS-reglen vil blive anvendt på pseudo-elementet ::before på <span>-elementet, som er et direkte barn af .menu_knap (label-elementet), når checkboxen med id "menu_toggle" er afkrydset (checked). Dette er ofte brugt til at skabe ekstra dekorative elementer, såsom linjer eller symboler, før indholdet af det valgte element.*/
+
+  #menu_toggle:checked + .menu_knap > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  /*Samlet set betyder #menu_toggle:checked + .menu_knap > span::after, at CSS-reglen vil blive anvendt på pseudo-elementet ::after på <span>-elementet, som er et direkte barn af .menu_knap (label-elementet), når checkboxen med id "menu_toggle" er afkrydset (checked). Dette kan bruges til at tilføje yderligere dekoration eller stil til "hamburger"-ikonet efter det faktiske indhold af <span>.*/
+
+  /**** Viser selve menuen ****/
+  #menu_toggle:checked ~ ul {
+    left: 0 !important;
+  }
+  /*~: Dette er "general sibling combinator" og vælger alle efterfølgende søskende elementer af det tidligere valgte element, der deler samme forælder.*/
+
+  /**** Udsseende af burgermenu knappen ****/
+  .menu_knap {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  /**** Viser burgermenu med de 3 streger ****/
+  .menu_knap > span,
+  .menu_knap > span::before,
+  .menu_knap > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fcfbf9;
+  }
+
+  .menu_knap > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu_knap > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  /**** Andet ****/
+  li {
+    padding: 10px 0;
+  }
+
+  .ul_menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ffa500;
+  }
+  a {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+}
+
+/**** Desktopmenu ****/
+@media (min-width: 800px) {
+  #menu_toggle {
+    opacity: 0;
+  }
+  /* Skjuler checkbox */
+
+  .hamburger-menu label {
+    position: absolute;
+    z-index: 1;
+  }
+  .hamburger-menu input {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .ul_menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+    padding-right: 80px;
+    font-size: 18px;
+  }
+}
+
+header {
+  background-color: #ffa500;
+  position: sticky;
+  padding-bottom: 25px;
+  padding-top: 5px;
+  top: 0;
+  z-index: 2;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+.logo_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding-left: 30px;
+}
+
+a {
+  color: #323e3f;
+  text-decoration: none;
+  padding: 5px 14px;
+
+  border-radius: 2%;
+  font-family: "Lato", sans-serif;
+}
+
+ul :hover {
+  color: #fcfbf9;
+}
+
+.aktiv :hover {
+  color: #323e3f;
+}
+
+.aktiv a {
+  color: #fcfbf9;
+}
+
+/**************** Footer *******************/
+footer {
+  background-color: #ffa500;
+}
+
+.ul_footer {
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.logo_simpel_div {
+  display: flex;
+  justify-content: center;
+}
+
+.logo_simpel img {
+  width: 65px;
+  height: auto;
+  padding-top: 20px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.footer {
+  flex: 1 0 200px;
+  text-align: center;
+}
+
+/******************** Fonte ********************/
+p {
+  font-family: "Martel", serif;
+  color: #323e3f;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  color: #323e3f;
+  font-size: 45px;
+}
+
+h2 {
+  font-family: "Lato", sans-serif;
+  color: #323e3f;
+  font-size: 30px;
+}
+
+li {
+  font-family: "Lato", sans-serif;
+  color: #323e3f;
+  font-size: 20px;
+}
+
+/********************* DESKTOP ********************/
+
+@media (min-width: 1200px) {
+  /************************ Footer **********************/
+  .ul_footer {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  li {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
