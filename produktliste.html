@@ -9,16 +9,8 @@
     <link rel="stylesheet" href="layout.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato&family=Martel&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon_io/favicon-32x32.png"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Martel&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
   </head>
 
   <body>
@@ -40,13 +32,90 @@
         <ul class="ul_menu">
           <li><a href="index.html">Forside</a></li>
           <li><a href="kategori.html">Kategori</a></li>
-          <li><a href="produkt.html">Produkt</a></li>
           <li class="aktiv"><a href="produktliste.html">Produktliste</a></li>
+          <li><a href="produkt.html">Produkt</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <h1>Produktliste</h1>
+
+      <!--<div class="grid_produktliste">
+        <div>
+          <img
+            src="https://kea-alt-del.dk/t7/images/webp/640/1573.webp"
+            alt="Trænings bukser"
+          />
+          <h2>Nike</h2>
+          <h3>3/4 træningsbukser</h3>
+          <h4 class="luft_produkt">Pris: 300 kr.</h4>
+          <a href="produkt.html"
+            ><button class="knap_produktliste">Læs mere her</button></a
+          >
+        </div>
+        <div>
+          <img
+            src="https://kea-alt-del.dk/t7/images/webp/1000/1533.webp"
+            alt="Trænings t-shirt"
+          />
+          <h2>Puma</h2>
+          <h3>Trænings t-shirt</h3>
+          <h3>UDSALG</h3>
+          <h4>Før pris: 200 kr.</h4>
+          <h4 class="luft_inden_knap">Pris nu: 100 kr.</h4>
+          <a href="produkt.html"
+            ><button class="knap_produktliste">Læs mere her</button></a
+          >
+        </div>
+        <div>
+          <img
+            src="https://kea-alt-del.dk/t7/images/jpg/640/1552.jpg"
+            alt="Fodbold"
+          />
+          <h2>Puma</h2>
+          <h3>Fodbold</h3>
+          <h3>UDSOLGT</h3>
+          <h4 class="luft_produkt_udsolgt">Pris: 150 kr.</h4>
+          <a href="produkt.html"
+            ><button class="knap_produktliste">Læs mere her</button></a
+          >
+        </div>
+        <div>
+          <img
+            src="https://kea-alt-del.dk/t7/images/jpg/1000/1580.jpg"
+            alt="Trænings bukser"
+          />
+          <h2>Hummel</h2>
+          <h3>Træningsdragt</h3>
+          <h3>UDSOLGT</h3>
+          <h4>Før pris: 400 kr.</h4>
+          <h4 class="luft_inden_knap">Pris nu: 200 kr.</h4>
+          <a href="produkt.html"
+            ><button class="knap_produktliste">Læs mere her</button></a
+          >
+        </div>
+      </div>-->
+      <section>
+        <div class="produkt_container"></div>
+      </section>
+
+      <template class="produkt_template">
+        <article class="produkt_article">
+          <a class="a" href="produkt.html">
+            <div class="produkt_image_container">
+              <img class="produkt_image" src="https://kea-alt-del.dk/t7/images/webp/1000/1533.webp" alt="Trænings t-shirt" />
+              <span class="soldout">Sold Out</span>
+            </div>
+            <h3 class="produkt_brandname">brandname</h3>
+            <h3 class="produkt_productdisplayname">productdisplayname</h3>
+            <p class="produkt_price">price</p>
+            <div class="produkt_grid_discount">
+              <p class="produkt_price_discount">price after discount</p>
+              <p class="produkt_discount">discount</p>
+            </div>
+          </a>
+        </article>
+      </template>
     </main>
 
     <footer>
@@ -54,8 +123,8 @@
         <ul class="ul_footer">
           <li><a href="index.html">Forside</a></li>
           <li><a href="kategori.html">Kategori</a></li>
-          <li><a href="produkt.html">Produkt</a></li>
           <li><a href="produktliste.html">Produktliste</a></li>
+          <li><a href="produkt.html">Produkt</a></li>
         </ul>
         <div class="logo_simpel_div">
           <a class="logo_simpel" href="index.html">
@@ -64,5 +133,6 @@
         </div>
       </div>
     </footer>
+    <script src="produktliste.js"></script>
   </body>
 </html>
