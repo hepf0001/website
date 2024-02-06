@@ -7,13 +7,9 @@ let produktTemplate;
 let produktContainer;
 
 function init() {
-  console.log("init");
-
   produktTemplate = document.querySelector(".produkt_template");
-  console.log("produkt_template", produktTemplate);
 
   produktContainer = document.querySelector(".produkt_container");
-  console.log("produkt_container", produktContainer);
 
   fetch(produktURL)
     .then(function (response) {
@@ -28,7 +24,6 @@ function showProdukt(produktJSON) {
   let produktClone;
 
   produktJSON.forEach((produkt) => {
-    console.log("Produkt", produkt);
     produktClone = produktTemplate.cloneNode(true).content;
 
     produktClone.querySelector("a").href = `produkt.html?id=${produkt.id}`;
@@ -38,11 +33,39 @@ function showProdukt(produktJSON) {
 
     produktClone.querySelector(".produkt_brandname").textContent = produkt.brandname;
     produktClone.querySelector(".produkt_productdisplayname").textContent = produkt.productdisplayname;
-    produktClone.querySelector(".produkt_price").textContent = `Oprindelig pris: ${produkt.price} kr.`;
 
-    produktClone.querySelector(".produkt_price_discount").textContent = ` ${produkt.price} kr.`;
+    /*
+    beerClone.querySelector(".beer_abv_data").textContent = beer.abv;
+    */
+    produktClone.querySelector(".produkt_price").textContent = `Pris: ${produkt.price} kr.`;
 
-    produktClone.querySelector(".produkt_discount").textContent = `-${produkt.discount}%`;
+    /*
+    if (beer.method.twist) {
+      beerClone.querySelector(".beer_twist").classList.remove("hide");
+      beerClone.querySelector(".beer_article").classList.add("twist");
+    }
+    */
+    if (produkt.discount) {
+      console.log("Produkt", produkt);
+      produktClone.querySelector(".produkt_price").classList.add("line_trough");
+      produktClone.querySelector(".produkt_discount").classList.remove("hide");
+      produktClone.querySelector(".produkt_discount").textContent = `-${produkt.discount}%`;
+      produktClone.querySelector(".produkt_price_discount").classList.remove("hide");
+      produktClone.querySelector(".produkt_price_discount").textContent = `Ny pris: ${produkt.price} kr.`;
+    }
+
+    /*
+    if (beer.abv >= 5.5) {
+      beerClone.querySelector(".beer_strong").classList.remove("hide");
+      beerClone.querySelector(".beer_article").classList.add("strong");
+    } else if (beer.abv <= 4.4) {
+      beerClone.querySelector(".beer_article").classList.add("mild");
+    }
+    */
+    if (produkt.soldout) {
+      console.log("Produkt", produkt);
+      produktClone.querySelector(".soldout").classList.remove("hide");
+    }
 
     produktContainer.appendChild(produktClone);
   });

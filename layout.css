@@ -105,6 +105,10 @@
 }
 
 /**** rabat ****/
+.produkt_price.line_trough {
+  text-decoration: line-through;
+}
+
 .produkt_grid_discount {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -121,6 +125,11 @@
   display: inline-block;
   border-radius: 5px;
   color: #f6f4f1;
+}
+
+/**** hide ****/
+.hide {
+  display: none;
 }
 
 /******************* Produkt **************************/
