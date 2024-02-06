@@ -31,7 +31,7 @@ function showProdukt(produktJSON) {
     console.log("Produkt", produkt);
     produktClone = produktTemplate.cloneNode(true).content;
 
-    produktClone.querySelector(".a").href = `produkt.html?id=${produkt.id}`;
+    produktClone.querySelector("a").href = `produkt.html?id=${produkt.id}`;
 
     produktClone.querySelector(".produkt_image").src = `https://kea-alt-del.dk/t7/images/webp/640/${produkt.id}.webp`;
     produktClone.querySelector(".produkt_image").alt = `Picture of ${produkt.productdisplayname} `;
