@@ -6,6 +6,12 @@ fetch("https://kea-alt-del.dk/t7/api/products/" + id)
   .then((Response) => Response.json())
   .then((data) => showProduct(data));
 
+function calculateDiscountedPrice(originalPrice, discountPercentage) {
+  const discountAmount = (originalPrice * discountPercentage) / 100;
+  const discountedPrice = originalPrice - discountAmount;
+  return discountedPrice.toFixed(2); // Runder til to decimaler
+}
+
 function showProduct(produkt) {
   console.log("produkt", produkt);
 
@@ -23,7 +29,8 @@ function showProduct(produkt) {
     document.querySelector(".produkt_discount").classList.remove("hide");
     document.querySelector(".produkt_discount").textContent = `-${produkt.discount}%`;
     document.querySelector(".produkt_price_discount").classList.remove("hide");
-    document.querySelector(".produkt_price_discount").textContent = `Ny pris: ${produkt.price} kr.`;
+    //document.querySelector(".produkt_price_discount").textContent = `Ny pris: ${produkt.price} kr.`;
+    document.querySelector(".produkt_price_discount").textContent = `Ny pris: ${calculateDiscountedPrice(produkt.price, produkt.discount)} kr.`;
   }
 
   if (produkt.soldout) {

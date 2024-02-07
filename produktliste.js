@@ -1,10 +1,19 @@
 window.addEventListener("DOMContentLoaded", init);
 
-const produktURL = "https://kea-alt-del.dk/t7/api/products?limit=50&start=10";
+const urlParams = new URLSearchParams(window.location.search);
+const category = urlParams.get("category");
+
+const produktURL = "https://kea-alt-del.dk/t7/api/products?category=" + category;
 //const imagePath = `https://kea-alt-del.dk/t7/images/webp/640/${productid}.webp`;
 
 let produktTemplate;
 let produktContainer;
+
+function calculateDiscountedPrice(originalPrice, discountPercentage) {
+  const discountAmount = (originalPrice * discountPercentage) / 100;
+  const discountedPrice = originalPrice - discountAmount;
+  return discountedPrice.toFixed(2); // Runder til to decimaler
+}
 
 function init() {
   produktTemplate = document.querySelector(".produkt_template");
@@ -42,7 +51,8 @@ function showProdukt(produktJSON) {
       produktClone.querySelector(".produkt_discount").classList.remove("hide");
       produktClone.querySelector(".produkt_discount").textContent = `-${produkt.discount}%`;
       produktClone.querySelector(".produkt_price_discount").classList.remove("hide");
-      produktClone.querySelector(".produkt_price_discount").textContent = `Ny pris: ${produkt.price} kr.`;
+      //produktClone.querySelector(".produkt_price_discount").textContent = `Ny pris: ${produkt.price} kr.`;
+      produktClone.querySelector(".produkt_price_discount").textContent = `Ny pris: ${calculateDiscountedPrice(produkt.price, produkt.discount)} kr.`;
     }
 
     if (produkt.soldout) {

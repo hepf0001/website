@@ -49,6 +49,11 @@
   padding-bottom: 100px;
 }
 
+#link {
+  color: #33576b;
+  background-color: aquamarine;
+}
+
 /******************* Produktliste **************************/
 
 * {
