@@ -34,17 +34,8 @@ function showProdukt(produktJSON) {
     produktClone.querySelector(".produkt_brandname").textContent = produkt.brandname;
     produktClone.querySelector(".produkt_productdisplayname").textContent = produkt.productdisplayname;
 
-    /*
-    beerClone.querySelector(".beer_abv_data").textContent = beer.abv;
-    */
     produktClone.querySelector(".produkt_price").textContent = `Pris: ${produkt.price} kr.`;
 
-    /*
-    if (beer.method.twist) {
-      beerClone.querySelector(".beer_twist").classList.remove("hide");
-      beerClone.querySelector(".beer_article").classList.add("twist");
-    }
-    */
     if (produkt.discount) {
       console.log("Produkt", produkt);
       produktClone.querySelector(".produkt_price").classList.add("line_trough");
@@ -54,17 +45,10 @@ function showProdukt(produktJSON) {
       produktClone.querySelector(".produkt_price_discount").textContent = `Ny pris: ${produkt.price} kr.`;
     }
 
-    /*
-    if (beer.abv >= 5.5) {
-      beerClone.querySelector(".beer_strong").classList.remove("hide");
-      beerClone.querySelector(".beer_article").classList.add("strong");
-    } else if (beer.abv <= 4.4) {
-      beerClone.querySelector(".beer_article").classList.add("mild");
-    }
-    */
     if (produkt.soldout) {
       console.log("Produkt", produkt);
       produktClone.querySelector(".soldout").classList.remove("hide");
+      produktClone.querySelector(".produkt_image").classList.add("filter");
     }
 
     produktContainer.appendChild(produktClone);

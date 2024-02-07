@@ -85,10 +85,10 @@
 }
 
 /**** udsolgt ****/
-.produkt_image {
+
+.produkt_image.filter {
   opacity: 0.5;
 }
-
 .soldout {
   position: absolute;
   top: 30px;
