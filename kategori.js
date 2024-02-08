@@ -11,7 +11,7 @@ function showCategory(cat) {
 
   const clone = template.cloneNode(true);
 
-  clone.querySelector("a").textContent = cat.showCategory;
+  clone.querySelector("a").textContent = cat.category;
   clone.querySelector("a").href = `produktliste.html?category=${cat.category}`;
 
   document.querySelector(".letterGroup").appendChild(clone);

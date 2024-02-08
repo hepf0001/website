@@ -35,7 +35,7 @@ function showProduct(produkt) {
 
   if (produkt.soldout) {
     console.log("Produkt", produkt);
-    document.querySelector(".soldout").classList.remove("hide");
+    document.querySelector(".soldout_single").classList.remove("hide");
     document.querySelector(".produkt_image").classList.add("filter");
   }
 }
