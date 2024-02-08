@@ -3,6 +3,8 @@ window.addEventListener("DOMContentLoaded", init);
 const urlParams = new URLSearchParams(window.location.search);
 const category = urlParams.get("category");
 
+document.querySelector("h1").textContent = category;
+
 const produktURL = "https://kea-alt-del.dk/t7/api/products?category=" + category;
 //const imagePath = `https://kea-alt-del.dk/t7/images/webp/640/${productid}.webp`;
 

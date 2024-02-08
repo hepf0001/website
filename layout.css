@@ -22,8 +22,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
-  padding-top: 100px;
-  padding-bottom: 200px;
+  padding-top: 10px;
+  padding-bottom: 100px;
 }
 
 /******************* Kategori **************************/
@@ -43,10 +43,11 @@
 
 .kategogi_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 50px;
   padding-top: 20px;
   padding-bottom: 100px;
+  padding: 10px;
 }
 
 .knap_kategori a {
@@ -118,17 +119,6 @@
   font-weight: bold;
 }
 
-.soldout_single {
-  position: absolute;
-  top: 30px;
-  right: 120px;
-  background-color: #57788b;
-  color: #f6f4f1;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
 /**** rabat ****/
 .produkt_price.line_trough {
   text-decoration: line-through;
@@ -158,6 +148,25 @@
 }
 
 /******************* Produkt **************************/
+.grid_produkt {
+  padding-bottom: 100px;
+}
+
+.produkt_tekst {
+  padding: 15px;
+}
+
+.soldout_single {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  background-color: #57788b;
+  color: #f6f4f1;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .knap_produkt:hover {
   background-color: #33576b;
 }
@@ -183,7 +192,11 @@ button {
 }
 
 label {
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+.liste {
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .produkt_p {
@@ -212,5 +225,21 @@ label {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .kategogi_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+  }
+  .grid_produkt {
+    padding-top: 50px;
+  }
+
+  .soldout_single {
+    top: 30px;
+    right: 120px;
   }
 }
